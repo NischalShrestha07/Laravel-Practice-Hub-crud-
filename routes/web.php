@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -26,6 +27,11 @@ Route::delete('/users/{id}', [UserController::class, 'delete'])->name('user.dele
 
 //dashboard routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+
+Route::get('/tasks', [TaskController::class, 'index'])->name('tasks');
+Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 
 
 //Products Routes
