@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
@@ -70,3 +71,10 @@ Route::get('tasks/edit/{task}', [TaskController::class, 'edit'])->name('tasks.ed
 Route::put('tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
 Route::delete('tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 Route::get('tasks/{id}/restore', [TaskController::class, 'restored'])->name('tasks.restore');
+
+Route::get('posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+Route::put('posts/{post}', [PostController::class, 'update'])->name('posts.update');
+Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
