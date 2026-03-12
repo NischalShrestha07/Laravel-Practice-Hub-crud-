@@ -1,5 +1,8 @@
-<h1>Posts</h1>
-<a href="{{route('posts.create')}}">Create Post</a>
+<div class="container" style="display: flex; justify-content: space-between;">
+
+    <h1>Posts</h1>
+    <a href="{{route('posts.create')}}">Create Post</a>
+</div>
 {{-- <ul>
     @foreach ($posts as $post)
     <li>
@@ -17,6 +20,7 @@
         <th>Content</th>
         <th>Actions</th>
     </tr>
+
     @foreach ($posts as $post)
     <tr>
         <td>{{$post->title}}</td>
