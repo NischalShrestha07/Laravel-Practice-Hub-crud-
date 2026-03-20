@@ -35,9 +35,6 @@
                 <button type="submit">Delete</button>
             </form>
         </td>
-        {{-- <td>
-
-        </td> --}}
     </tr>
     @endforeach
 </table>
