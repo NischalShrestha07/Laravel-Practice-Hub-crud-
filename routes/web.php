@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -78,3 +79,38 @@ Route::post('posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('posts/{post}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+
+Route::get('/haha/$id', function ($id) {
+    return $id;
+});
+
+Route::get('/hehe/{count}', function ($count) {
+    return $count;
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('dashboard', function () {
+        return "Inside the dashboard";
+    });
+});
+
+
+
+
+Route::prefix('haha')->group(function () {
+    Route::get('test', function () {
+        return "how are you is it working?";
+    });
+    Route::get('{whatsup}', function ($whatsup) {
+        return $whatsup;
+    });
+});
+
+Route::prefix('test')->group(function () {
+    Route::get('/', [TestController::class, 'index']);
+    Route::get('/create', [TestController::class, 'create']);
+    Route::post('/store', [TestController::class, 'store'])->name('test.store');
+    Route::get('/edit/{id}', [TestController::class, 'edit'])->name('test.edit');
+    Route::put('/edit/{id}/update', [TestController::class, 'update'])->name('test.update');
+});
