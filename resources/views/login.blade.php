@@ -155,7 +155,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Sign In</h3>
-
+                    <img src="{{'storage/'.Auth::user()->image}}" alt="">
                 </div>
                 <div class="card-body">
                     <form action="{{route('authenticate')}}" method="POST">

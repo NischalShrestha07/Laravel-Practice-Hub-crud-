@@ -1,0 +1,6 @@
+=>form bana
+tyo form sga connect garne 
+tesko controller ma validation banaune
+afnai validation message dekhaune
+old data dekhaune 
+value lai 
